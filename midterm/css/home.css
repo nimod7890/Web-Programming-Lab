@@ -1,0 +1,28 @@
+h2 {
+  text-transform: uppercase;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper > button {
+  text-transform: capitalize;
+  width: 400px;
+  height: 50px;
+  border-radius: 3px 3px;
+  margin: 15px;
+  padding-top: 9px;
+  font-size: 25px;
+  border: 3px solid #694b8a;
+  border-right: 3px solid #503a68;
+  border-bottom: 3px solid #503a68;
+}
+
+.wrapper > button:hover {
+  background-color: #503a6846;
+}
+
+#Return {
+  margin-right: 200px;
+}

@@ -1,0 +1,16 @@
+p {
+  font-size: 30px;
+}
+button {
+  background-color: rgba(61, 61, 61, 0.883);
+  color: rgba(251, 251, 251, 0.858);
+  padding: 10px 180px 10px 180px;
+  border-radius: 3px 3px;
+  font-size: 20px;
+  border: 3px solid rgb(101, 101, 101);
+  border-right: 3px solid rgb(10, 10, 10);
+  border-bottom: 3px solid rgb(10, 10, 10);
+}
+button:hover {
+  background-color: rgba(70, 70, 70, 0.431);
+}

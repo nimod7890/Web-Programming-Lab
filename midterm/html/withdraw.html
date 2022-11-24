@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/withdraw.css">
+    <title>SKKU ATM</title>
+</head>
+
+<body>
+    <center>
+        <p>Enter the amount of withdraw</p>
+        <p id="maxi">Maximum value:$</p>
+        <div class="wrapper">
+            <div class="left">
+                <p>Quick Links</p>
+                <button class="number">20</button>
+                <button class="number">40</button>
+                <button class="number">60</button>
+                <button class="number">80</button>
+            </div>
+            <div class="center">
+                <img class="img" id="100" src="../assets/uparrow100copy.png"
+                    onmouseover="this.src='../assets/uparrow100.png'"
+                    onmouseout="this.src='../assets/uparrow100copy.png'" alt=" uparrow100copy">
+                <img class="img" id="20" src="../assets/uparrow20copy.png"
+                    onmouseover="this.src='../assets/uparrow20.png'" onmouseout="this.src='../assets/uparrow20copy.png'"
+                    alt=" uparrow20">
+                <input type="text" value=0 size="6" disabled>
+                <img class="img" id="-20" src="../assets/downarrow20copy.png"
+                    onmouseover="this.src='../assets/downarrow20.png'"
+                    onmouseout="this.src='../assets/downarrow20copy.png'" alt=" downarrow20">
+                <img class="img" id="-100" src="../assets/downarrow100copy.png"
+                    onmouseover="this.src='../assets/downarrow100.png'"
+                    onmouseout="this.src='../assets/downarrow100copy.png'" alt=" downarrow100">
+            </div>
+            <button id="Enter" onclick="location.href = 'withdraw-check.html' ">Enter</button>
+            <div class="right">
+                <p>Quick Links</p>
+                <button class="number">100</button>
+                <button class="number">200</button>
+                <button class="number">300</button>
+                <button id="Return" onclick="location.href = 'home.html' ">Back</button>
+            </div>
+        </div>
+
+        <script src="../js/withdraw.js" type="module"></script>
+</body>
+
+</html>

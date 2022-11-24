@@ -1,0 +1,103 @@
+* {
+  color: #503a68;
+  background-color: #f2e6e2;
+}
+h1 {
+  color: #9a96bb;
+  text-transform: capitalize;
+  font-size: 50px;
+  font-weight: lighter;
+}
+h2 {
+  color: #9a96bb;
+  text-transform: capitalize;
+  font-size: 35px;
+  font-weight: lighter;
+}
+p {
+  font-size: 25px;
+}
+
+#Return {
+  background-color: rgb(227, 115, 115);
+  color: rgba(251, 251, 251, 0.858);
+  margin: 10px;
+  padding: 10px 20px 10px 20px;
+  font-size: 20px;
+  text-transform: capitalize;
+  border-radius: 5px 5px;
+  border: 3px solid rgb(192, 0, 0);
+  border-right: 3px solid rgb(106, 2, 2);
+  border-bottom: 3px solid rgb(106, 2, 2);
+  float: right;
+}
+#Return:hover {
+  background-color: rgb(217, 43, 43);
+}
+
+#Enter {
+  background-color: #21874d7c;
+  color: rgba(251, 251, 251, 0.858);
+  padding: 10px 20px 10px 20px;
+  font-size: 20px;
+  text-transform: capitalize;
+  border-radius: 5px 5px;
+  border: 3px solid #17924c;
+  border-right: 3px solid #226640;
+  border-bottom: 3px solid #226640;
+  margin: 10px;
+}
+#Enter:hover {
+  background-color: #21874dd5;
+}
+button:active:not([disabled]) {
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 1px;
+}
+
+input {
+  background-color: #af9ab9;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px 10px;
+  text-align: center;
+  font-size: 25px;
+  border: 3px solid #9456df;
+  border-right: 3px solid #503a68;
+  border-bottom: 3px solid#503a68;
+}
+input::placeholder {
+  font-weight: bold;
+}
+input[type="password"] {
+  font-family: Verdana;
+}
+
+.digits {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+}
+.digits > button {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px 10px;
+  background-color: #a39bb3;
+  margin: 5px;
+  font-size: px;
+  font-weight: bold;
+  border: 3px solid #9456df;
+  border-right: 3px solid #503a68;
+  border-bottom: 3px solid#503a68;
+}
+.digits > button:hover {
+  background-color: #402b56bc;
+}
+
+#enter {
+  color: #226640;
+}
+#del {
+  color: #cd3b3b;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/transfer.css">
+    <link rel="stylesheet" href="../css/dot-button.css">
+
+    <title>SKKU ATM</title>
+</head>
+
+<body>
+    <center>
+        <div class="wrapper">
+            <div class="left">
+                <h1>From</h1>
+                <select name="from" id="from">
+                    <option selected disabled>Choose an Account</option>
+                </select>
+            </div>
+            <div class="center">
+                <p id="maxi">Maximum value:$</p>
+                <input type="text" placeholder="$0000.00" size="13" disabled>
+                <div class="digits">
+                    <button class="number">1</button>
+                    <button class="number">2</button>
+                    <button class="number">3</button>
+                    <button class="number">4</button>
+                    <button class="number">5</button>
+                    <button class="number">6</button>
+                    <button class="number">7</button>
+                    <button class="number">8</button>
+                    <button class="number">9</button>
+                    <button class="number">0</button>
+                    <button id="dot" name="dot" class="number">.</button>
+                    <button id="del">Del</button>
+                    <button id="enter">Enter</button>
+                </div>
+            </div>
+            <div class="right">
+                <h1>To</h1>
+                <select name="to" id="to">
+                    <option selected disabled>Choose an Account</option>
+                </select>
+            </div>
+        </div>
+        <button id="Return" onclick="location.href = 'home.html' ">Back</button>
+
+        <script src="../js/transfer.js" type="module"></script>
+</body>
+
+</html>

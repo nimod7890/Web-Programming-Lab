@@ -1,0 +1,20 @@
+table {
+  width: 100%;
+  background-color: none;
+  border-collapse: collapse;
+}
+th {
+  text-transform: capitalize;
+  background-color: whitesmoke;
+  text-align: left;
+  padding: 10px;
+}
+th:first-child {
+  width: 55%;
+}
+th:last-child {
+  width: 15%;
+}
+td {
+  padding: 7px;
+}

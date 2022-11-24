@@ -1,0 +1,11 @@
+[name="dot"]:disabled {
+  background-color: #787381;
+}
+[name="dot"]:enabled {
+  background-color: #a39bb3;
+}
+#enter {
+  width: 170px;
+  grid-row: 5;
+  grid-column: 1/4;
+}

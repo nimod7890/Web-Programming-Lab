@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skku restaurant</title>
+  </head>
+  <style>
+    table {
+      font-size: large;
+      margin-left: 160px;
+    }
+    #fishImg img {
+      margin-left: 90px;
+      margin-right: 90px;
+    }
+    #steakText p {
+      margin-right: 300px;
+    }
+    
+    #soupText p {
+      margin-left: 300px;
+    }
+    
+    .category a {
+      font-size: x-large;
+      margin: 15px;
+    }
+    * {
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+    td {
+      font-weight: bold;
+    }
+    .main {
+      position: relative;
+    }
+    .main img {
+      position: relative;
+      width: 100%;
+      vertical-align: middle;
+    }
+    .main p {
+      text-align: center;
+      position: absolute;
+      font-size: x-large;
+      color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    #bg_offer {
+      width: 100%;
+    }
+    
+  </style>
+    <center>
+      <div class="category">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#specialMenu">GALLERY</a>
+        <a href="#contact">CONTACT US</a><br /><br />
+        <br /><br />
+      </div>
+      <div class="main">
+        <img src="assets/bg_main.png" alt="bg_main" />
+        <p>SKKU RESTAURANT</p>
+      </div>
+      <br><br><br><br><br>
+        <hr />
+        <hr />
+        <hr />
+        <br><br><br><br>
+      <div class="welcome">
+        <h2>Welcome to SKKU RESTAURANT</h2>
+        <img src="assets\chef_img.png" alt="chef_img" width="320" />
+        <br />
+        <p>
+          Over the next twelve months we will feature, successively, four menus
+          - or 'volumes' - each of which presents some of SKKU's unique dishes
+          and the thinking behind them. By walking in SKKU's footsteps, you will
+          discover for yourself the story of the restaurant, with all its
+          ground-breaking originality, experimentation and innovation.
+        </p>
+        <br>
+        <img id="bg_offer" src="assets/bg_offer.png" alt="" />
+        <br><br><br>
+      </div>
+      <hr />
+      <hr />
+      <hr />
+      <div class="specialMenuImg">
+        <br><br><br><br>
+        <h2>SPECIAL MENU</h2>
+        <br>
+        <table>
+            <tr>
+                <td id="steakImg">
+                    <center>
+                        <img src="assets/beef_steak_img.png" alt="" height="350">
+                    </center>
+                </td>
+                <td id="fishImg">
+                    <center>
+                        <img src="assets/exc_fish_img.png" alt="" height="350">
+                    </center>
+                </td>
+                <td id="soupImg">
+                    <center>
+                        <img src="assets/fish_soup_img.png" alt="" height="350">
+                    </center>
+                </td>
+            </tr>
+        </table>
+      </div>
+      <div>
+        <table>
+          <tr>
+            <td id="steakText">
+              <center>
+                <p align="left">BEEF STEAK </p>
+                <p align="left">12,000 &#92</p>
+              </center>
+            </td>
+            <td id="fishText">
+              <center>
+                <p>EXCLUSIVE FISH</p>
+                <p>15,000 &#92</p>
+              </center>
+            </td>
+            <td id="soupText">
+              <center>
+                <p align="right">FISH SOUP</p>
+                <p align="right">10,000 &#92</p>
+              </center>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="form">
+        <hr />
+        <hr />
+        <hr /><form method="post">
+          <table>
+            <tr>
+              <td>Name:</td>
+            </tr>
+            <tr>
+              <td><input type="text" aria-label="name" size="40" /></td>
+            </tr>
+            <tr>
+              <td><br /></td>
+            </tr>
+            <tr>
+              <td>Email:</td>
+            </tr>
+            <tr>
+              <td><input type="email" aria-label="email" size="40" /></td>
+            </tr>
+            <tr>
+              <td><br /></td>
+            </tr>
+            <tr>
+              <td>Messages:</td>
+            </tr>
+            <tr>
+              <td>
+                <textarea cols="21" rows="6" aria-label="Messages"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="submit" value="Send" /></td>
+            </tr>
+          </table>
+        </form>
+    <hr />
+    <hr />
+    <hr />
+      </div>
+      <div class="contact">
+      <h2>CONTACT US</h2>
+      <p>PHONE-NO: 010-0000-0000</p>
+      <p>YOUTUBE: <a href="#">YOUTUBE CHANNEL</a></p>
+      <P>FACEBOOK: <a href="#">FACEBOOK PAGE</a></P>
+      <P> INSTAGRAM: <a href="#">INSTAGRAM PAGE</a></P>
+      </div>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    color: #009688 ;
+    word-break: keep-all;
+}
+p{
+    background-color: inherit;
+}
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+}
+#center{
+    margin-bottom: 100px;
+    width: 600px;
+}
+.quiz{
+    font-size:40px;
+    font-weight: bold;
+}
+button{
+    border-radius:10rem;
+    border: 1px solid;
+    /* box-shadow: 4px 4px 4px -1px rgba(0, 0, 0, 0.1), 4 2px 4px 5px rgba(0, 0, 0, 0.06); */
+    background-color: whitesmoke;
+    width: 200px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+button:active,
+button:hover,
+button:focus {
+  outline: 0;
+  box-shadow: 0 0 10px 5px #00968739;
+  position: relative;
+  top:-2px;
+}
+h1{
+    font-size: 50px;
+}

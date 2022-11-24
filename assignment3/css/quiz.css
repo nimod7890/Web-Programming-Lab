@@ -1,0 +1,158 @@
+*{
+    background-color: #e5ffff;
+}
+.top{
+    display: grid;
+    grid-template-columns: 30% 50% 20%;
+    grid-template-areas:"progress . score";
+    text-align: center;
+    height: 90px;
+    padding-bottom: 10px;
+}
+
+
+.grayText{
+    color:gray;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: lighter;
+    margin-bottom: 0px;
+}
+
+#progress{
+    margin-top: 12px;
+    display: grid;
+    height: 30px;
+    border-radius: 10rem ;
+    border: 3px solid;
+    grid-template-areas:"left right";
+}
+
+
+#progressDiv{
+    grid-area:progress;
+}
+.progress0{
+    grid-template-columns: 25% 75%;
+}
+.progress1{
+    grid-template-columns: 50% 50%;
+}
+.progress2{
+    grid-template-columns: 75% 25%;
+}
+.progress3{
+    grid-template-columns: 0% 100%;
+    background-color:  #009688;
+}
+#progressLeft{
+    grid-area: left;
+    border-radius: 10rem ;
+    background-color: #009688;
+}
+#progressRight{
+    grid-area: right;
+    background-color: transparent;
+    border-radius: 10rem ;
+}
+
+
+
+
+#scoreDiv{
+    grid-area:score;
+}
+#score{
+    margin:0px;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+
+
+.quiz{
+    margin:30px 0px;
+}
+
+.option{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas:"num question";
+    
+    height:50px;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.option:active,
+.option:hover,
+.option:focus {
+    outline: 0;
+    box-shadow: 0 5px 10px 6px #00968739;
+    position: relative;
+    top:-2px;
+}
+
+
+.correct{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas:"num question";
+    
+    height:50px;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 5px;
+
+    background-color:rgba(84, 161, 115, 0.461);
+}
+
+
+.wrong{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas:"num question";
+    
+    height:50px;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 5px;
+
+    background-color:rgba(181, 57, 57, 0.564);
+}
+
+.num{
+    grid-area: num;
+    border-radius: 20px;
+    height:50px;
+    background-color: #009688;
+    
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+    cursor: pointer;
+    transition: 0.5s;
+    margin:0px
+
+}
+
+.text{
+    grid-area: question;
+    background-color: transparent;
+    padding-left:7px;
+    height:50px;
+    margin:0px;
+
+    color:black;
+    display: flex;
+    align-items:center;
+
+    cursor: pointer;
+    transition: 0.5s;
+}
+

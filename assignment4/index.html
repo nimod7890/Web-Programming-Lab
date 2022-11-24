@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="init.js"></script>
+    <script src="index.js"></script>
+    <center>
+        <div class="main">
+            <div class="btns">
+                <div class="btn btnOnClick" id="loginSelector">
+                    Login
+                </div>
+                <div class="btn" id="signUpSelector">
+                    Sign Up
+                </div>
+            </div>
+            <div class="content" id="loginContent">
+                <h3>Login</h3>
+                <h4 id="loginH4">Enter user name and password:</h4>
+                <div class="input">
+                    <label for="loginEmail">Email</label>
+                    <div class="inputDiv">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                        <span class="check hidden" id="loginEmailCheck">✔</span>
+                        <span class="blueAlert hidden" id="loginEmailAlert"></span>
+                    </div>
+                    <label for="loginPassword">Password</label>
+                    <div class="inputDiv">
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <span class="check hidden" id="loginPasswordCheck">✔</span>
+                        <span class="blueAlert hidden" id="loginPasswordAlert"></span>
+                    </div>
+                    <button type="submit" class="blueBtn" id="loginBtn">Login</button>
+                </div>
+            </div>
+            <div class="content hidden" id="loginComplete">
+                <h3>You are logged in.</h3>
+            </div>
+            <div class="content hidden" id="signUpContent">
+                <h3>Sign Up</h3>
+                <h4>Fill in the form:</h4>
+                <label for="firstName">First name</label>
+                <div class="inputDiv">
+                    <input type="text" pattern="^[A-Z][a-zA-Z]+$" id="firstName" placeholder="First name" required>
+                    <span class="check hidden" id="firstNameCheck">✔</span>
+                    <span class="blueAlert hidden" id="firstNameAlert"></span>
+                </div>
+
+                <label for="lastName">Last name</label>
+                <div class="inputDiv">
+                    <input type="text" id="lastName" placeholder="Last name" required>
+                    <span class="check hidden" id="lastNameCheck">✔</span>
+                    <span class="blueAlert hidden" id="lastNameAlert"></span>
+                </div>
+
+                <div class="radio">
+                    <input type="radio" name="radio" id="male" value="male" required>
+                    <p>Male</p>
+                    <input type="radio" name="radio" id="female" value="female">
+                    <p>Female</p>
+                    <span class="blueAlert blueRadioAlert hidden" id="radioAlert"></span>
+                    <span class="check hidden" id="radioCheck">✔</span>
+                </div>
+
+                <label for="signUpEmail">Email</label>
+                <div class="inputDiv">
+                    <input type="email" id="signUpEmail" placeholder="Email" required>
+                    <span class="check hidden" id="signUpEmailCheck">✔</span>
+                    <span class="blueAlert hidden" id="signUpEmailAlert"></span>
+                </div>
+
+                <label for="signUpPassword">Password</label>
+                <div class="inputDiv">
+                    <input type="password" id="signUpPassword" placeholder="Password" required>
+                    <span class="check hidden" id="signUpPasswordCheck">✔</span>
+                    <span class="blueAlert hidden" id="signUpPasswordAlert"></span>
+                </div>
+
+                <label for="confirmPassword">Confirm password</label>
+                <div class="inputDiv">
+                    <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                    <span class="check hidden" id="confirmPasswordCheck">✔</span>
+                    <span class="blueAlert hidden" id="confirmPasswordAlert"></span>
+                </div>
+                <button type="submit" class="blueBtn" id="signUpBtn">Sign Up</button>
+            </div>
+            <div class="content hidden" id="signUpComplete">
+                <h3>You are signed up.</h3>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>

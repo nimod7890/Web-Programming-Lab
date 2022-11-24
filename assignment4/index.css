@@ -1,0 +1,153 @@
+* {
+  background-color: #384047;
+}
+.main {
+  margin-top: 100px;
+  width: 400px;
+}
+.btns {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 50px;
+  background-color: lightgray;
+  cursor: pointer;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  background-color: inherit;
+}
+.btnOnClick {
+  border-top: 5px solid #2f558e;
+  background-color: white;
+}
+
+.content {
+  padding: 20px;
+  background-color: #150f0f;
+  color: white;
+  /* display: none; */
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.content * {
+  background-color: inherit;
+  margin: 0;
+  display: flex;
+}
+.hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+h4 {
+  font-size: 13px;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.input {
+  flex-direction: column;
+}
+.input label {
+  font-size: 13px;
+  margin: 4px 0;
+}
+.inputDiv > input {
+  border: 1px solid white;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: white;
+  width: 340px;
+  height: 15px;
+  background-color: transparent;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-transition: background-color 9999s ease-out;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: white;
+}
+.radio {
+  font-size: 12px;
+}
+.radio p {
+  padding: 10px;
+}
+h3 {
+  font-weight: bold;
+}
+.blueBtn {
+  background-color: #2f558e;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  font-size: 18px;
+  color: white;
+  margin-top: 15px;
+  border: none;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+}
+.required:required {
+  border: 1px solid red;
+}
+.required:focus {
+  outline: none;
+}
+.inputDiv {
+  display: grid;
+  grid-template-columns: 350px 20px max-content;
+}
+.inputRadioDiv {
+  display: grid;
+}
+.blueAlert {
+  position: relative;
+  background-color: #2f5682;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 5px 10px 6px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  max-width: 300px;
+  height: fit-content;
+  display: inline-block;
+  top: 3px;
+  overflow: visible;
+}
+.blueRadioAlert {
+  left: 239px;
+  top: 10px;
+}
+.check {
+  position: relative;
+  display: inline-block;
+  color: green;
+  font-size: 25px;
+  font-weight: bold;
+  width: 10px;
+  right: 15px;
+  bottom: 3px;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+#radioCheck {
+  left: 185px;
+}
+.warning {
+  color: red;
+}

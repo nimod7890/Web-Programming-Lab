@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+.ProjectInfo {
+  margin: 0 20px 25px 20px;
+  justify-content: center;
+  max-width: 600px;
+  h2 {
+    text-align: center;
+    padding: 15px 0px;
+    font-weight: 900;
+    font-size: 40px;
+    word-break: keep-all;
+    letter-spacing: 10px;
+    background: #98e2a1;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+  }
+}
+
+.ProjectInfoWrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-areas: "btn hashtag";
+}
+
+#ProjectMember {
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+#ProjectHashtag {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: hashtag;
+  margin: 0 10px;
+  span {
+    letter-spacing: 1px;
+    width: auto;
+    height: auto;
+    word-wrap: break-word;
+    margin: 5px 3px;
+    font-size: 15px;
+    border-radius: 1rem;
+    padding: 7px 15px 7px 10px;
+    background-color: rgba(255, 255, 255, 0.554);
+  }
+}
+
+@import url("LikeBtn.scss");

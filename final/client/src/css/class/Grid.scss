@@ -1,0 +1,71 @@
+.ClassGridWrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.GridImgWrapper {
+  margin-bottom: 13px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  justify-content: center;
+}
+.Grid:nth-child(3n) {
+  .GridImgWrapper {
+    background-color: #6aa121;
+  }
+}
+.Grid:nth-child(3n + 2) {
+  .GridImgWrapper {
+    background-color: #a1c935;
+  }
+}
+.Grid {
+  word-break: keep-all;
+  word-wrap: break-word;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  max-height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 5px rgba(131, 130, 130, 0.49);
+  cursor: pointer;
+  letter-spacing: 2px;
+  p {
+    margin: 5px 0 10px 0;
+    padding: 0 10px;
+  }
+  p:last-child {
+    margin: 0;
+    padding: 0;
+  }
+  .GridImgWrapper {
+    background-color: #8bb381;
+  }
+}
+.GridThumbnail {
+  border: 1px solid lightgray;
+  margin: 9px;
+}
+.GridProjectName {
+  font-size: 20px;
+  font-weight: bold;
+}
+.GridTeam {
+  color: rgb(123, 123, 123);
+  font-size: 17px;
+}
+.GridHashtag {
+  color: rgb(123, 123, 123);
+  font-size: 13px;
+  font-style: italic;
+  text-decoration: 0.1px underline;
+  display: flex;
+  flex-wrap: wrap;
+  span {
+    padding: 4px 6px;
+    margin: 2px 4px;
+    background-color: rgba(221, 221, 221, 0.269);
+    border-radius: 2rem;
+  }
+}

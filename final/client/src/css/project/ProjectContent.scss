@@ -1,0 +1,35 @@
+.ProjectContentWrapper {
+  display: grid;
+  grid-template-areas:
+    "youtube"
+    "pdf";
+  grid-template-rows: 450px 450px;
+  justify-content: center;
+  height: 1000px;
+}
+
+#ProjectYoutube {
+  border-top: 3px dashed #00620a;
+  grid-area: youtube;
+}
+#ProjectPDF {
+  grid-area: pdf;
+  height: auto;
+  width: auto;
+}
+.ProjectContent {
+  padding: 30px 0;
+}
+
+.ProjectContent p {
+  padding-bottom: 20px;
+  font-size: 30px;
+  color: #00620a;
+  font-weight: 900;
+}
+
+.ProjectPDF {
+  margin-top: 5%;
+  width: 100%;
+  height: 100%;
+}

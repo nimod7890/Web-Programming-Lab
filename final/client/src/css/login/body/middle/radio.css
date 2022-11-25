@@ -1,0 +1,49 @@
+.radio {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.radioLabel {
+  display: flex;
+  cursor: pointer;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  padding: 0px 10px;
+}
+.radioInput {
+  position: absolute;
+  left: -9999px;
+}
+.radioInput:checked + span {
+  background-color: rgba(8, 86, 50, 0.103);
+}
+.radioInput:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em var(--primary-color);
+}
+.radioInput:hover + span:before {
+  box-shadow: inset 0 0 0 0.4375em var(--primary-color);
+}
+.radioSpan {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+.radioSpan:hover {
+  background-color: rgba(8, 86, 50, 0.103);
+}
+
+.radioSpan:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em var(--primary-color);
+}

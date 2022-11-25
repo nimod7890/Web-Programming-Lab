@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Cute+Font&family=Do+Hyeon&family=Dokdo&family=East+Sea+Dokdo&family=Gaegu&family=Gamja+Flower&family=Gothic+A1&family=Gugi&family=Hi+Melody&family=Jua&family=Kirang+Haerang&family=Nanum+Brush+Script&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&family=Noto+Serif+KR&family=Poor+Story&family=Single+Day&family=Song+Myung&family=Stylish&family=Sunflower:wght@300&family=Yeon+Sung&display=swap");
+html {
+  margin: 0 auto;
+  font-family: "Nanum Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 1vmin;
+  justify-content: center;
+  display: flex;
+}
+/* https://blog.pages.kr/2493 */
+button,
+.headerLogo,
+.loginButton {
+  cursor: pointer;
+}
+/* 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+} */
+
+body {
+  background: linear-gradient(
+    230.78deg,
+    hsla(147, 79%, 26%, 0.774) 10.64%,
+    #23332d 90.6%
+  );
+  width: max(1000px);
+}
+
+center {
+  margin: auto;
+}

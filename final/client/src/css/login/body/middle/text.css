@@ -1,0 +1,58 @@
+.inputText {
+  width: 300px;
+}
+.inputTextShow {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputTextHide {
+  display: none;
+}
+
+.input-box {
+  position: relative;
+  margin: 10px 0;
+  display: flex;
+}
+
+.input-box > .textInput {
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px rgb(18, 64, 45);
+  padding: 20px 0px 5px 0px;
+  font-size: 14pt;
+  width: 300px;
+}
+
+.textInput::placeholder {
+  color: transparent;
+}
+
+.textInput:placeholder-shown + label {
+  color: #aaa;
+  font-size: 14pt;
+  top: 15px;
+}
+
+.textInput:focus + label,
+.textLabel {
+  color: #8aa1a1;
+  pointer-events: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.textInput:focus,
+.textInput:not(:placeholder-shown) {
+  border-bottom: solid 1px #8aa1a1;
+  outline: none;
+}

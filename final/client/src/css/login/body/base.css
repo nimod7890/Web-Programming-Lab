@@ -1,0 +1,15 @@
+.loginBody-base {
+  grid-row: base;
+  overflow: auto;
+}
+.loginBody-base p {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 46px;
+  letter-spacing: 0.8em;
+
+  color: rgba(255, 255, 255, 0.882);
+  text-align: left;
+  text-shadow: -1px 0 var(--txtborder1), 0 1px var(--txtborder1),
+    1px 0 var(--txtborder2), 0 -1px var(--txtborder2);
+}

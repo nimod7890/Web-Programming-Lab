@@ -1,0 +1,14 @@
+.loginHeader {
+  color: #ffffffa7;
+  line-height: 60px;
+  font-size: 25px;
+}
+
+.loginHeader p:nth-of-type(1) {
+  font-weight: 700;
+}
+.loginHeader p:nth-of-type(2) {
+  font-size: 50px;
+  letter-spacing: 0.5em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,30 @@
+{
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "LF",
+      "sizes": "16x16" ,
+      "type": "image/png"
+    },
+    {
+      "src": "skku",
+      "sizes": "45x45" ,
+      "type": "image/png"
+    },
+    {
+      "src": "learningFair",
+      "type": "image/png",
+      "sizes": "720x173"
+    },
+    {
+      "src": "skkuLearningFair",
+      "type": "image/png",
+      "sizes": "164x52"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background-color":"#ffffff" 
+}

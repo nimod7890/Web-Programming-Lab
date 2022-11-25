@@ -1,0 +1,51 @@
+.Awards {
+  display: grid;
+  grid-template-rows: 1fr;
+  background-color: #edfeedd3;
+  height: 600px;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+// $main: #f3576c;
+// $left: #fbe6d3;
+// $right: #3e2e6a;
+// $bottom: #130b52;
+
+$main: #c23b3b;
+$left: rgb(223, 255, 176);
+$right: #ffc643;
+$bottom: #00620a;
+
+h1 {
+  font-size: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-weight: 900;
+  width: 500px;
+}
+
+.AwardsWrapper {
+  position: relative;
+  h1 {
+    color: $left;
+    text-transform: uppercase;
+    text-align: center;
+
+    &:after {
+      content: attr(data-heading);
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $main;
+      transform: translate(0.4vw, 0.3vh);
+      text-shadow: 1px 0px 0px $right, 0px 1px 0px $bottom, 2px 1px 0px $right,
+        1px 2px 0px $bottom, 3px 2px 0px $right, 2px 3px 0px $bottom,
+        4px 3px 0px $right, 3px 4px 0px $bottom, 5px 4px 0px $right,
+        4px 5px 0px $bottom, 6px 5px 0px $right, 5px 6px 0px $bottom,
+        7px 6px 0px $right;
+    }
+  }
+}

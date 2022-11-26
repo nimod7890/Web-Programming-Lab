@@ -1,7 +1,7 @@
 import Footer from "./footer";
 import Header from "./header";
 import "../../css/layouts/layout.scss";
-import { Route, Routes, useLocation, useParams } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Main from "../Main";

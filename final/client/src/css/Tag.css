@@ -1,26 +1,26 @@
 .TagBtn {
   position: relative;
-  background-color: #bce4c70c;
+  background-color: #ccbce42e;
   border-radius: 20px;
   border-style: solid;
   border-width: 5px #f0f0f0;
   display: inline-block;
   cursor: pointer;
-  color: #f0e4e4c4;
+  color: #e9e4f0c4;
   font-family: "Nanum Gothic", sans-serif;
   font-size: 13px;
   font-weight: bold;
   padding: 10px 15px;
-  text-shadow: 0px 0px 0px #2f6627;
+  text-shadow: 0px 0px 0px #402766;
   margin: 5px 5px;
 }
 .TagBtn:hover {
-  background-color: #bce4c7e8;
+  background-color: #cebce4e8;
   color: #17442470;
 }
 
 .onClick {
-  background-color: #bce4c7e8;
+  background-color: #d0bce4e8;
   color: #17442470;
 }
 

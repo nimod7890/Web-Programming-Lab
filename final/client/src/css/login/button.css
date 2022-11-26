@@ -1,7 +1,7 @@
 :root {
-  --primary: #0ec783;
+  --primary: #ef51dd;
   --solid: #fff;
-  --btn-w: 20em;
+  --btn-w: 15em;
   --dot-w: calc(var(--btn-w) * 0.1);
   --tr-X: calc(var(--btn-w) - var(--dot-w));
 }
@@ -12,7 +12,7 @@
   width: var(--btn-w);
   color: #ffffffa7;
   border-radius: 5em;
-  font-size: 1.3em;
+  font-size: 1.5em;
   line-height: 2em;
   cursor: pointer;
 }
@@ -33,7 +33,7 @@
   top: -0.4em;
   height: 0.8em;
   width: 0.8em;
-  background: #5df1bb;
+  background: #7117e8;
   border-radius: 1em;
   border: 0.25em solid var(--solid);
   box-shadow: 0 0 0.7em var(--solid), 0 0 2em var(--primary);

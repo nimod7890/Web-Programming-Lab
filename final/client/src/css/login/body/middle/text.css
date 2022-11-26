@@ -22,7 +22,7 @@
 .input-box > .textInput {
   background: transparent;
   border: none;
-  border-bottom: solid 1px rgb(18, 64, 45);
+  border-bottom: solid 1px rgb(43, 18, 64);
   padding: 20px 0px 5px 0px;
   font-size: 14pt;
   width: 300px;
@@ -40,7 +40,7 @@
 
 .textInput:focus + label,
 .textLabel {
-  color: #8aa1a1;
+  color: #8b8aa1;
   pointer-events: none;
   position: absolute;
   left: 0px;
@@ -53,6 +53,6 @@
 
 .textInput:focus,
 .textInput:not(:placeholder-shown) {
-  border-bottom: solid 1px #8aa1a1;
+  border-bottom: solid 1px #928aa1;
   outline: none;
 }

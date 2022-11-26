@@ -4,32 +4,32 @@
   "icons": [
     {
       "src": "LF",
-      "sizes": "16x16" ,
+      "sizes": "16x16",
       "type": "image/png"
     },
     {
       "src": "skku",
-      "sizes": "45x45" ,
+      "sizes": "45x45",
       "type": "image/png"
     },
     {
-      "src": "learningFair",
+      "src": "exhibition",
       "type": "image/png",
-      "sizes": "720x173"
+      "sizes": "300x50"
     },
     {
-      "src": "skkuLearningFair",
+      "src": "github",
       "type": "image/png",
-      "sizes": "100x40"
+      "sizes": "32x32"
     },
     {
-      "src": "LFlogo",
+      "src": "instagram",
       "type": "image/png",
-      "sizes": "100x20"
+      "sizes": "32x32"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background-color":"#ffffff" 
+  "background-color": "#ffffff"
 }

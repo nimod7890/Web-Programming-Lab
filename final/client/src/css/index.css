@@ -23,8 +23,8 @@ code {
 body {
   background: linear-gradient(
     230.78deg,
-    hsla(147, 79%, 26%, 0.774) 10.64%,
-    #23332d 90.6%
+    hsla(270, 81%, 35%, 0.774) 10.64%,
+    #3e2b48 90.6%
   );
   width: max(1000px);
 }

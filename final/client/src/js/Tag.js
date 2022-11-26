@@ -50,7 +50,6 @@ function Tag() {
     axios
       .get(`/api/tag/${tagId}`)
       .then(function (response) {
-        console.log(response.data);
         projectList.current = response.data;
         setprojects(projectList.current);
       })

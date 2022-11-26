@@ -1,7 +1,7 @@
 import Footer from "./footer";
 import Header from "./header";
 import "../../css/layouts/layout.scss";
-import { Route, Routes, useLocation } from "react-router";
+import { Route, Routes, useLocation, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Main from "../Main";
@@ -11,25 +11,6 @@ import Class from "../Class";
 import Project from "../Project";
 
 const Layout = () => {
-  async function project_layout_info_api(projectLayoutInfoReqJson) {
-    try {
-      const response = await axios.post(
-        "/api/project-layout-info",
-        JSON.stringify(projectLayoutInfoReqJson),
-        {
-          headers: {
-            "Content-Type": `application/json`
-          }
-        }
-      );
-      const project = response.data;
-      setTitle(
-        `[${project.team_number}] ${project.team_name}  (${project.class_name})`
-      );
-    } catch (e) {
-      console.log(e);
-    }
-  }
   const [title, setTitle] = useState(false);
   const loc = useLocation().pathname;
   useEffect(() => {
@@ -42,7 +23,17 @@ const Layout = () => {
     } else if (loc.length > 6 && loc.slice(0, 6) === "/class") {
       setTitle(loc.slice(7));
     } else if (loc.length > 8 && loc.slice(0, 8) === "/project") {
-      project_layout_info_api({ project_id: loc.slice(9) });
+      axios
+        .get(`/api/project/${loc.slice(9)}`)
+        .then(function (response) {
+          const project = response.data[0];
+          setTitle(
+            `[${project.team_number}] ${project.team_name}  (${project.class_name})`
+          );
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   }, [loc]);
 

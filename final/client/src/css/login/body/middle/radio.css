@@ -16,7 +16,7 @@
   left: -9999px;
 }
 .radioInput:checked + span {
-  background-color: rgba(8, 86, 50, 0.103);
+  background-color: rgba(38, 8, 86, 0.103);
 }
 .radioInput:checked + span:before {
   box-shadow: inset 0 0 0 0.4375em var(--primary-color);
@@ -32,7 +32,7 @@
   transition: 0.25s ease;
 }
 .radioSpan:hover {
-  background-color: rgba(8, 86, 50, 0.103);
+  background-color: rgba(47, 8, 86, 0.103);
 }
 
 .radioSpan:before {

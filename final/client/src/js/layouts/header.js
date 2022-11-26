@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header className="header">
       <img
-        src={`${process.env.PUBLIC_URL}/skkuLearningFair.png`}
+        src={`${process.env.PUBLIC_URL}/exhibition.png`}
         onClick={() => handleOnClick("/main")}
         alt=""
         className="headerLogo"

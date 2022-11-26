@@ -6,13 +6,32 @@ const Footer = () => {
       <div className="footerWrapper">
         <div className="copyright">
           <p>
-            Copyright ⓒ 2022 Learning Fair, Sungkyunkwan University <br />
-            데이터사이언스교육센터(
-            <a target="_blank" href="http://dsedu.skku.edu" rel="noreferrer">
-              dsedu.skku.edu
-            </a>
-            )
+            Copyright ⓒ 2022 Web Programming Lab, Sungkyunkwan University <br />
           </p>
+        </div>
+        <div className="snsLogo">
+          <a
+            className="github"
+            target="_blank"
+            href="https://github.com/nimod7890/Web-Programming-Lab/tree/main/final"
+            rel="noreferrer"
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/github.png`}
+              alt="github logo"
+            />
+          </a>
+          <a
+            className="instagram"
+            target="_blank"
+            href="https://www.instagram.com/nim_od/"
+            rel="noreferrer"
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/instagram.png`}
+              alt="intragram logo"
+            />
+          </a>
         </div>
       </div>
     </footer>

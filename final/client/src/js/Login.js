@@ -53,12 +53,7 @@ function Login() {
       setStudentId(0);
       setMajor(radioValue);
     }
-    // const submitValue = {
-    //   userType: radioValue,
-    //   name,
-    //   studentId,
-    //   major
-    // };
+
     sessionStorage.setItem("login-name", name);
     navigate("/main");
   }
@@ -67,15 +62,13 @@ function Login() {
     <div className="Login">
       <center>
         <div className="loginHeader">
-          <p>2022</p>
-          <p>Learning Fair</p>
-          <p>문제해결과알고리즘</p>
+          <p>2022 SKKU Fall semester</p>
+          <p>Project Exhibition</p>
         </div>
         <div className="loginBody">
           <div className="loginBody-top">
             <div className="logoText">
-              <p>sungkyunkwan university</p>
-              <p>11.23-12.04</p>
+              <p>web programming lab</p>
             </div>
             <img
               src={`${process.env.PUBLIC_URL}/skku.png`}
@@ -116,11 +109,11 @@ function Login() {
             </form>
           </div>
           <div className="loginBody-base">
-            <p>learing fair'22</p>
+            <p>final project</p>
           </div>
         </div>
         <div className="loginButton" type="submit" onClick={handleLoginBtn}>
-          <span>enter to the wave</span>
+          <span>enter</span>
           <div className="dot"></div>
         </div>
       </center>

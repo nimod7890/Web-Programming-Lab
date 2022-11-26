@@ -43,18 +43,12 @@ function Project() {
   }, [projectId]);
 
   async function handleOnclick() {
-    try {
-      const response = await axios.post(`/api/project/${projectId}/like`, {
-        headers: {
-          "Content-Type": `application/json`
-        }
-      });
-      const likeInfo = response.data.likeinfo[0];
-      click.current = likeInfo.like_button;
-      project.current.like_cnt = likeInfo.like_cnt;
-      setLike(likeInfo.like_cnt);
-    } catch (e) {
-      console.log(e);
+    if (click.current) {
+      setLike(like - 1);
+      click.current = false;
+    } else {
+      setLike(like + 1);
+      click.current = true;
     }
   }
 

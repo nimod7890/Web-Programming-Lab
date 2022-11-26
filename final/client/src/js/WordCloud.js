@@ -8,28 +8,19 @@ function WordCloud() {
   const callbacks = useMemo(() => {
     return {
       onWordClick: (key) => {
-        if(key.text === '성균관대' || key.text === '러닝페어' || key.text === '2022' || key.text === '문제해결' || key.text === '알고리즘'){
-          return navigate(`/tag`)
-        }
-        else navigate(`/tag/${key.text}`)
+        if (
+          key.text === "성균관대" ||
+          key.text === "러닝페어" ||
+          key.text === "2022" ||
+          key.text === "문제해결" ||
+          key.text === "알고리즘"
+        ) {
+          return navigate(`/tag`);
+        } else navigate(`/tag/${key.text}`);
       }
     };
   }, [navigate]);
   const options = useMemo(() => {
-    if (window.matchMedia("(max-width:768px)").matches)
-      return {
-        enableTooltip: false,
-        deterministic: false,
-        fontFamily: "헤드라인",
-        fontSizes: [20, 80],
-        fontStyle: "normal",
-        fontWeight: "900",
-        padding: 2,
-        rotations: 2,
-        rotationAngles: [0, 90],
-        scale: "log",
-        spiral: "rectangular"
-      };
     return {
       enableTooltip: false,
       deterministic: false,
@@ -46,8 +37,6 @@ function WordCloud() {
   }, []);
   // var w=window.innerWidth, h=window.innerHeight;
   const size = useMemo(() => {
-    if (window.matchMedia("(max-width:768px)").matches)
-      return [window.innerWidth * 0.7, window.innerHeight * 0.6];
     return [900, 650];
   }, []);
   const words = useMemo(() => {

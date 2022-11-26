@@ -9,7 +9,6 @@ function Tag() {
   const tagId = useParams().tagId;
   const [projects, setprojects] = useState([]);
   const projectList = useRef(projects);
-  const projectRandList = useRef(projects);
   const [clicked, setClicked] = useState();
 
   const TagList = [
@@ -49,13 +48,11 @@ function Tag() {
 
   useEffect(() => {
     axios
-      .get("/api/tag", {
-        params: { tag: tagId }
-      })
+      .get(`/api/tag/${tagId}`)
       .then(function (response) {
-        projectList.current = response.data.projects;
-        projectRandList.current = response.data.projectsRand;
-        setprojects(projectRandList.current);
+        console.log(response.data);
+        projectList.current = response.data;
+        setprojects(projectList.current);
       })
       .catch(function (error) {
         console.log(error);

@@ -3,28 +3,29 @@ import { useParams } from "react-router-dom";
 import Grid from "./Grid/Grid";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-
+function shuffleArray(array) {
+  const newArray = JSON.parse(JSON.stringify(array));
+  newArray.sort(() => Math.random() - 0.5);
+  return newArray;
+}
 function Class() {
   const classId = useParams().classId;
   const [projects, setprojects] = useState([]);
   const projectList = useRef(projects);
   const projectRandList = useRef(projects);
-  // const [checked, setChecked] = useState(false);
 
   function handleChecked({ target }) {
     target.checked
       ? setprojects(projectList.current)
-      : setprojects(projectRandList.current);
+      : setprojects(projectRandList.current.sort(() => Math.random() - 0.5));
   }
 
   useEffect(() => {
     axios
-      .get("/api/class", {
-        params: { class: classId }
-      })
+      .get(`/api/class/${classId}`)
       .then(function (response) {
-        projectList.current = response.data.projects;
-        projectRandList.current = response.data.projectsRand;
+        projectList.current = response.data;
+        projectRandList.current = shuffleArray(response.data);
         setprojects(projectRandList.current);
       })
       .catch(function (error) {

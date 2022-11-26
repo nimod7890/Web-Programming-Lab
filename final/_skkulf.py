@@ -20,7 +20,7 @@ app.secret_key = os.environ.get('FLASK_SESSION_SECRETKEY')
 #app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=20)
 
 #이 값을 조정해서 세션 지속 시간 결정
-session_duration_seconds = 86400
+# session_duration_seconds = 86400
 
 
 # @app.route('/')
@@ -122,16 +122,16 @@ session_duration_seconds = 86400
 
 
 
-@app.route('/api/congrats-videos')
-def congrats_vidoes():
-    #영상 업데이트 되면 url 바꿔야 함
-    congrats_vidoes_json = {
-        "president":"https://2022-skku-learning-fair-bucket.s3.ap-northeast-2.amazonaws.com/congrats/president_congrats.mp4",
-        "sw_dean":"https://2022-skku-learning-fair-bucket.s3.ap-northeast-2.amazonaws.com/congrats/sw_dean_congrats.mp4",
-        "ds_dean":"https://2022-skku-learning-fair-bucket.s3.ap-northeast-2.amazonaws.com/congrats/ds_dean_congrats.mp4"
-    }
+# @app.route('/api/congrats-videos')
+# def congrats_vidoes():
+#     #영상 업데이트 되면 url 바꿔야 함
+#     congrats_vidoes_json = {
+#         "president":"https://2022-skku-learning-fair-bucket.s3.ap-northeast-2.amazonaws.com/congrats/president_congrats.mp4",
+#         "sw_dean":"https://2022-skku-learning-fair-bucket.s3.ap-northeast-2.amazonaws.com/congrats/sw_dean_congrats.mp4",
+#         "ds_dean":"https://2022-skku-learning-fair-bucket.s3.ap-northeast-2.amazonaws.com/congrats/ds_dean_congrats.mp4"
+#     }
 
-    return jsonify(congrats_vidoes_json)
+#     return jsonify(congrats_vidoes_json)
 
 
 
@@ -193,119 +193,119 @@ def project_layout_info():
 
 
 
-@app.route('/api/class')
-def class_list():
-    conn = pymysql.connect(host=os.environ.get('DB_URL'),
-                       user=os.environ.get('DB_USER'),
-                       password=os.environ.get('DB_PASSWORD'),
-                       db=os.environ.get('DB_NAME'),
-                       charset='utf8')
+# @app.route('/api/class')
+# def class_list():
+#     conn = pymysql.connect(host=os.environ.get('DB_URL'),
+#                        user=os.environ.get('DB_USER'),
+#                        password=os.environ.get('DB_PASSWORD'),
+#                        db=os.environ.get('DB_NAME'),
+#                        charset='utf8')
 
-    class_name = request.args.get('class')
+#     class_name = request.args.get('class')
 
-    sql = f"""SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c,project_name,like_cnt,project_thumbnail_url,project_id  FROM project WHERE class_name = '{class_name}'"""
-    sql_ = f"""SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c,project_name,like_cnt,project_thumbnail_url,project_id  FROM project WHERE class_name = '{class_name}' ORDER BY RAND()"""
-    with conn.cursor() as cur:
-        cur.execute(sql)
-        class_project_list_db_result = cur.fetchall()
+#     sql = f"""SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c,project_name,like_cnt,project_thumbnail_url,project_id  FROM project WHERE class_name = '{class_name}'"""
+#     sql_ = f"""SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c,project_name,like_cnt,project_thumbnail_url,project_id  FROM project WHERE class_name = '{class_name}' ORDER BY RAND()"""
+#     with conn.cursor() as cur:
+#         cur.execute(sql)
+#         class_project_list_db_result = cur.fetchall()
     
-    with conn.cursor() as cur:
-        cur.execute(sql_)
-        class_project_list_db_result_rand = cur.fetchall()
+#     with conn.cursor() as cur:
+#         cur.execute(sql_)
+#         class_project_list_db_result_rand = cur.fetchall()
         
-    class_project_list_json = {"projects":[],"projectsRand":[]}
+#     class_project_list_json = {"projects":[],"projectsRand":[]}
 
-    for class_project in class_project_list_db_result:
-        project_container = {
-            "team_name":class_project[0], 
-            "team_member":class_project[1], 
-            "team_number":class_project[2], 
-            "hashtag_main":class_project[3], 
-            "hashtag_custom_a":class_project[4], 
-            "hashtag_custom_b":class_project[5], 
-            "hashtag_custom_c":class_project[6],
-            "project_name":class_project[7],
-            "like_cnt":class_project[8],
-            "project_thumbnail_url":class_project[9],
-            "project_id":class_project[10]
-        }
-        class_project_list_json["projects"].append(project_container)
+#     for class_project in class_project_list_db_result:
+#         project_container = {
+#             "team_name":class_project[0], 
+#             "team_member":class_project[1], 
+#             "team_number":class_project[2], 
+#             "hashtag_main":class_project[3], 
+#             "hashtag_custom_a":class_project[4], 
+#             "hashtag_custom_b":class_project[5], 
+#             "hashtag_custom_c":class_project[6],
+#             "project_name":class_project[7],
+#             "like_cnt":class_project[8],
+#             "project_thumbnail_url":class_project[9],
+#             "project_id":class_project[10]
+#         }
+#         class_project_list_json["projects"].append(project_container)
         
-    for class_project in class_project_list_db_result_rand:
-        project_container_rand = {
-            "team_name":class_project[0], 
-            "team_member":class_project[1], 
-            "team_number":class_project[2], 
-            "hashtag_main":class_project[3], 
-            "hashtag_custom_a":class_project[4], 
-            "hashtag_custom_b":class_project[5], 
-            "hashtag_custom_c":class_project[6],
-            "project_name":class_project[7],
-            "like_cnt":class_project[8],
-            "project_thumbnail_url":class_project[9],
-            "project_id":class_project[10]
-        }
+#     for class_project in class_project_list_db_result_rand:
+#         project_container_rand = {
+#             "team_name":class_project[0], 
+#             "team_member":class_project[1], 
+#             "team_number":class_project[2], 
+#             "hashtag_main":class_project[3], 
+#             "hashtag_custom_a":class_project[4], 
+#             "hashtag_custom_b":class_project[5], 
+#             "hashtag_custom_c":class_project[6],
+#             "project_name":class_project[7],
+#             "like_cnt":class_project[8],
+#             "project_thumbnail_url":class_project[9],
+#             "project_id":class_project[10]
+#         }
         
-        class_project_list_json["projectsRand"].append(project_container_rand)
-    return jsonify(class_project_list_json)
+#         class_project_list_json["projectsRand"].append(project_container_rand)
+#     return jsonify(class_project_list_json)
 
-@app.route('/api/tag')
-def tag_list():
-    conn = pymysql.connect(host=os.environ.get('DB_URL'),
-                       user=os.environ.get('DB_USER'),
-                       password=os.environ.get('DB_PASSWORD'),
-                       db=os.environ.get('DB_NAME'),
-                       charset='utf8')
+# @app.route('/api/tag')
+# def tag_list():
+#     conn = pymysql.connect(host=os.environ.get('DB_URL'),
+#                        user=os.environ.get('DB_USER'),
+#                        password=os.environ.get('DB_PASSWORD'),
+#                        db=os.environ.get('DB_NAME'),
+#                        charset='utf8')
 
-    tag_name = request.args.get('tag')
+#     tag_name = request.args.get('tag')
 
-    sql = f"""SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c, project_name,like_cnt,project_thumbnail_url,project_id FROM project WHERE hashtag_main = '{tag_name}'"""
-    sql_ = f"""SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c, project_name,like_cnt,project_thumbnail_url,project_id FROM project WHERE hashtag_main = '{tag_name}' ORDER BY RAND()"""
+#     sql = f"""SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c, project_name,like_cnt,project_thumbnail_url,project_id FROM project WHERE hashtag_main = '{tag_name}'"""
+#     sql_ = f"""SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c, project_name,like_cnt,project_thumbnail_url,project_id FROM project WHERE hashtag_main = '{tag_name}' ORDER BY RAND()"""
 
-    with conn.cursor() as cur:
-        cur.execute(sql)
-        tag_project_list_db_result = cur.fetchall()
+#     with conn.cursor() as cur:
+#         cur.execute(sql)
+#         tag_project_list_db_result = cur.fetchall()
     
-    with conn.cursor() as cur:
-        cur.execute(sql_)
-        tag_project_list_db_result_rand = cur.fetchall()
+#     with conn.cursor() as cur:
+#         cur.execute(sql_)
+#         tag_project_list_db_result_rand = cur.fetchall()
     
 
-    tag_project_list_json = {"projects":[], "projectsRand":[]}
-    for tag_project in tag_project_list_db_result:
-        tagproject_container = {
-            "team_name":tag_project[0], 
-            "team_member":tag_project[1], 
-            "team_number":tag_project[2], 
-            "hashtag_main":tag_project[3], 
-            "hashtag_custom_a":tag_project[4], 
-            "hashtag_custom_b":tag_project[5], 
-            "hashtag_custom_c":tag_project[6],
-            "project_name":tag_project[7],
-            "like_cnt":tag_project[8],
-            "project_thumbnail_url":tag_project[9],
-            "project_id":tag_project[10]
-        }
+#     tag_project_list_json = {"projects":[], "projectsRand":[]}
+#     for tag_project in tag_project_list_db_result:
+#         tagproject_container = {
+#             "team_name":tag_project[0], 
+#             "team_member":tag_project[1], 
+#             "team_number":tag_project[2], 
+#             "hashtag_main":tag_project[3], 
+#             "hashtag_custom_a":tag_project[4], 
+#             "hashtag_custom_b":tag_project[5], 
+#             "hashtag_custom_c":tag_project[6],
+#             "project_name":tag_project[7],
+#             "like_cnt":tag_project[8],
+#             "project_thumbnail_url":tag_project[9],
+#             "project_id":tag_project[10]
+#         }
 
-        tag_project_list_json["projects"].append(tagproject_container)
+#         tag_project_list_json["projects"].append(tagproject_container)
     
-    for tag_project in tag_project_list_db_result_rand:
-        tagproject_container_rand = {
-            "team_name":tag_project[0], 
-            "team_member":tag_project[1], 
-            "team_number":tag_project[2], 
-            "hashtag_main":tag_project[3], 
-            "hashtag_custom_a":tag_project[4], 
-            "hashtag_custom_b":tag_project[5], 
-            "hashtag_custom_c":tag_project[6],
-            "project_name":tag_project[7],
-            "like_cnt":tag_project[8],
-            "project_thumbnail_url":tag_project[9],
-            "project_id":tag_project[10]
-        }
+#     for tag_project in tag_project_list_db_result_rand:
+#         tagproject_container_rand = {
+#             "team_name":tag_project[0], 
+#             "team_member":tag_project[1], 
+#             "team_number":tag_project[2], 
+#             "hashtag_main":tag_project[3], 
+#             "hashtag_custom_a":tag_project[4], 
+#             "hashtag_custom_b":tag_project[5], 
+#             "hashtag_custom_c":tag_project[6],
+#             "project_name":tag_project[7],
+#             "like_cnt":tag_project[8],
+#             "project_thumbnail_url":tag_project[9],
+#             "project_id":tag_project[10]
+#         }
 
-        tag_project_list_json["projectsRand"].append(tagproject_container_rand)
-    return jsonify(tag_project_list_json)
+#         tag_project_list_json["projectsRand"].append(tagproject_container_rand)
+#     return jsonify(tag_project_list_json)
 
 @app.route('/api/project/<int:id>')
 def project(id):
@@ -426,10 +426,10 @@ def like_project(pj_id):
 
     return jsonify(like_info_json)
 
-@app.route('/api/logout')
-def logout():
-    session.pop('User_name', None)
-    return redirect(url_for('index'))
+# @app.route('/api/logout')
+# def logout():
+#     session.pop('User_name', None)
+#     return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

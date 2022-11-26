@@ -6,47 +6,45 @@ import YouTube from "react-youtube";
 import { useRef } from "react";
 
 function Project() {
+  const projectId = useParams().projectId;
+
   const project = useRef("");
   const click = useRef(false);
   const [like, setLike] = useState(0);
-  async function project_info_api(projectInfoReqJson) {
-    try {
-      const response = await axios.post(
-        "/api/project-info",
-        JSON.stringify(projectInfoReqJson),
-        {
-          headers: {
-            "Content-Type": `application/json`
-          }
-        }
-      );
-      const data = response.data;
-      project.current = {
-        class_name: data.class_name,
-        team_number: data.team_number,
-        team_name: data.team_name,
 
-        project_name: data.project_name,
-        team_member: data.team_member,
+  useEffect(() => {
+    axios
+      .get(`/api/project/${projectId}`)
+      .then(function (response) {
+        const data = response.data[0];
+        project.current = {
+          class_name: data.class_name,
+          team_number: data.team_number,
+          team_name: data.team_name,
 
-        project_pdf_url: data.project_pdf_url,
-        project_youtube_url: data.project_youtube_url.slice(-11),
+          project_name: data.project_name,
+          team_member: data.team_member,
 
-        hashtag_main: data.hashtag_main,
-        hashtag_custom_a: data.hashtag_custom_a,
-        hashtag_custom_b: data.hashtag_custom_b,
-        hashtag_custom_c: data.hashtag_custom_c,
+          project_pdf_url: data.project_pdf_url,
+          project_youtube_url: data.project_youtube_url.slice(-11),
 
-        like_cnt: data.like_cnt
-      };
-      setLike(project.current.like_cnt);
-    } catch (e) {
-      console.log(e);
-    }
-  }
+          hashtag_main: data.hashtag_main,
+          hashtag_custom_a: data.hashtag_custom_a,
+          hashtag_custom_b: data.hashtag_custom_b,
+          hashtag_custom_c: data.hashtag_custom_c,
+
+          like_cnt: data.like_cnt
+        };
+        setLike(project.current.like_cnt);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, [projectId]);
+
   async function handleOnclick() {
     try {
-      const response = await axios.post(`/api/project/${project_id}/like`, {
+      const response = await axios.post(`/api/project/${projectId}/like`, {
         headers: {
           "Content-Type": `application/json`
         }
@@ -60,17 +58,8 @@ function Project() {
     }
   }
 
-  const project_id = useParams().projectId;
-  useEffect(() => {
-    project_info_api({ project_id });
-  }, [project_id]);
-
   var youtube_w = 700;
   var youtube_h = 350;
-  if (window.matchMedia("(max-width:768px)").matches) {
-    youtube_w = window.innerWidth * 0.8;
-    youtube_h = youtube_w * 0.7;
-  }
   return (
     <div className="Project">
       <div className="ProjectInfo">

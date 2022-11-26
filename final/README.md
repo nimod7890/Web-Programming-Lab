@@ -1,4 +1,4 @@
-# learning-fair-backend
+# SKKU EXHIBITION
 
 ## Set up
 

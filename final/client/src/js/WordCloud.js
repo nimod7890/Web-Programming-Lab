@@ -1,25 +1,28 @@
 import { React, useMemo } from "react";
 import { useNavigate } from "react-router";
 import ReactWordcloud from "react-wordcloud";
-import "../css/Main.css";
+import "../scss/Main.css";
 
 function WordCloud() {
+  //move to each tag page
   const navigate = useNavigate();
   const callbacks = useMemo(() => {
     return {
       onWordClick: (key) => {
         if (
           key.text === "성균관대" ||
-          key.text === "러닝페어" ||
+          key.text === "전시회" ||
           key.text === "2022" ||
-          key.text === "문제해결" ||
-          key.text === "알고리즘"
+          key.text === "웹프실" ||
+          key.text === "프로젝트"
         ) {
           return navigate(`/tag`);
         } else navigate(`/tag/${key.text}`);
       }
     };
   }, [navigate]);
+
+  //wordcloud options
   const options = useMemo(() => {
     return {
       enableTooltip: false,
@@ -35,10 +38,13 @@ function WordCloud() {
       spiral: "rectangular"
     };
   }, []);
-  // var w=window.innerWidth, h=window.innerHeight;
+
+  //wordcloud size
   const size = useMemo(() => {
     return [900, 650];
   }, []);
+
+  //word list
   const words = useMemo(() => {
     return [
       {
@@ -134,7 +140,7 @@ function WordCloud() {
         value: 6
       },
       {
-        text: "러닝페어",
+        text: "웹프실",
         value: 100
       },
       {
@@ -142,11 +148,11 @@ function WordCloud() {
         value: 70
       },
       {
-        text: "문제해결",
+        text: "프로젝트",
         value: 30
       },
       {
-        text: "알고리즘",
+        text: "전시회",
         value: 30
       },
       {

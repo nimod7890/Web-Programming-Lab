@@ -1,16 +1,12 @@
-import "../css/Tag.css";
-import Grid from "./Grid/Grid";
+import "../scss/Tag.scss";
+import Grid from "./Class/Grid";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import TagBtn from "./Tag/Tag";
 
 function Tag() {
-  const tagId = useParams().tagId;
-  const [projects, setprojects] = useState([]);
-  const projectList = useRef(projects);
-  const [clicked, setClicked] = useState();
-
+  //tag list
   const TagList = [
     "게임",
     "패션",
@@ -21,7 +17,6 @@ function Tag() {
     "요리",
     "교육",
     "영화&도서",
-    // "드라마",
     "생활",
     "AI",
     "여행",
@@ -31,13 +26,15 @@ function Tag() {
     "쇼핑",
     "지도",
     "창작",
-    // "예술&디자인",
     "컴퓨팅",
     "보안",
     "편의&도구",
     "취업",
     "기타"
   ];
+
+  //change tag color if onclick
+  const [clicked, setClicked] = useState();
   const handleOnClick = (event) => {
     if (clicked !== undefined) {
       clicked.classList.remove("onClick");
@@ -46,6 +43,11 @@ function Tag() {
     setClicked(event.target);
   };
 
+  /**show projects including onclick tag */
+  const tagId = useParams().tagId;
+  const [projects, setprojects] = useState([]);
+  const projectList = useRef(projects);
+  //get project list info
   useEffect(() => {
     axios
       .get(`/api/tag/${tagId}`)
@@ -69,9 +71,7 @@ function Tag() {
             onClick={(event) => handleOnClick(event)}
           />
         ))}
-        {/* {TagList.map((Tag,idx)=>console.log(Tag))} */}
       </div>
-
       <div className="Class">
         <div className="ClassGridWrapper">
           {projects.map((project) => {

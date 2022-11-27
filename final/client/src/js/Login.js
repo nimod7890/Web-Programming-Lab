@@ -1,30 +1,26 @@
-import "../css/Login.css";
-import Radio from "./login/Radio";
-import RadioGroup from "./login/RadioGroup";
+import "../scss/Login.css";
+import Radio from "./Login/Radio";
+import RadioGroup from "./Login/RadioGroup";
 import { useState } from "react";
-import InputTextGroup from "./login/InputTextGroup";
-import InputText from "./login/InputText";
+import InputTextGroup from "./Login/InputTextGroup";
+import InputText from "./Login/InputText";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const navigate = useNavigate();
-
   const [radioValue, setRadioValue] = useState("재학생");
   const [isShow, setShow] = useState(true);
   const [name, setName] = useState("");
   const [studentId, setStudentId] = useState("");
   const [major, setMajor] = useState("");
 
-  const handleName = ({ target: { value } }) => setName(value);
-  const handleStudentId = ({ target: { value } }) => setStudentId(value);
-  const handleMajor = ({ target: { value } }) => setMajor(value);
-
+  //if '재학생' radio button onclick
   function onClickStudent() {
     setShow(true);
     setName("");
     setStudentId("");
     setMajor("");
   }
+  //if '외부인' radio button onclick
   function onClickOther() {
     setShow(false);
     setName("");
@@ -32,6 +28,13 @@ function Login() {
     setMajor("");
   }
 
+  //input user info
+  const handleName = ({ target: { value } }) => setName(value);
+  const handleStudentId = ({ target: { value } }) => setStudentId(value);
+  const handleMajor = ({ target: { value } }) => setMajor(value);
+
+  //check value and move to main page
+  const navigate = useNavigate();
   function handleLoginBtn() {
     if (name.length < 2) {
       alert("이름을 정확히 입력해주세요!");
@@ -53,7 +56,6 @@ function Login() {
       setStudentId(0);
       setMajor(radioValue);
     }
-
     sessionStorage.setItem("login-name", name);
     navigate("/main");
   }

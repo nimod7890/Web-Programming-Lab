@@ -1,4 +1,4 @@
-import "../css/Awards.scss";
+import "../scss/Awards.scss";
 
 function Awards() {
   return (

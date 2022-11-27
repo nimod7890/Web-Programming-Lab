@@ -1,0 +1,124 @@
+.headerMenu {
+  z-index: 1;
+  display: flex;
+  flex: auto;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.header img {
+  width: 120px;
+  height: 40px;
+  color: #fff;
+}
+
+.button {
+  --background: #2f3545;
+  --shadow: 0 2px 8px -1px #{rgba(#151924, 0.32)};
+  --shadow-hover: 0 4px 20px -2px #{rgba(#151924, 0.5)};
+  --text: #fff;
+  --font-size: 20px;
+  --duration: 0.44s;
+  --move-hover: -4px;
+  --font-shadow: var(--font-size);
+  margin: 0px 3px;
+  padding: 10px 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: var(--font-size);
+  letter-spacing: 0.2em;
+  border: none;
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+  font-size: var(--font-size);
+  color: var(--text);
+  transform: translateY(var(--y)) translateZ(0);
+  transition: transform var(--duration) ease, box-shadow var(--duration) ease;
+  div {
+    display: flex;
+    overflow: hidden;
+    text-shadow: 0 var(--font-shadow) 0 var(--text);
+    span {
+      display: block;
+      font-size: var(--font-size);
+      transition: transform var(--duration) ease;
+      transform: translateY(var(--m)) translateZ(0);
+      $i: 1;
+      @while $i < 12 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i / 20 + s;
+        }
+        $i: $i + 1;
+      }
+    }
+  }
+  &:hover {
+    --y: var(--move-hover);
+    --shadow: var(--shadow-hover);
+
+    span {
+      --m: calc(var(--font-size) * -1);
+      color: #004b1a;
+    }
+  }
+  &.reverse {
+    --font-shadow: calc(var(--font-size) * -1);
+    &:hover {
+      span {
+        --m: calc(var(--font-size));
+        color: #4b0000b7;
+      }
+    }
+  }
+}
+.classMenu {
+  display: none;
+  visibility: hidden;
+
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.743); /* 밝게 보이도록 배경색 추가 */
+  border-radius: 10px;
+  box-shadow: 0 6px 30px -30px #000;
+  border-width: 1px 1px 0 0;
+  border-color: #fff;
+  border-style: solid;
+
+  text-align: center;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(7%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(255, 255, 255, 0.537);
+  }
+}
+.onclick {
+  visibility: visible;
+  display: block;
+}
+
+.leftMenu,
+.rightMenu {
+  margin: 20px 0;
+  padding: 0px 20px;
+  display: inline-block;
+  p {
+    color: black;
+    font-size: 20px;
+    margin: 10px 0;
+  }
+}
+.leftMenu {
+  border-right: 2px dashed black;
+}
+
+.leftMenu p,
+.rightMenu p {
+  cursor: pointer;
+}

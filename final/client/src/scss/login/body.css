@@ -3,6 +3,7 @@
   --txtborder2: #3b04628b;
   --primary-color: #2e0041;
 }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -13,6 +14,7 @@ input:-webkit-autofill:active {
   box-shadow: 0 0 0px 1000px transparent inset !important;
   background-color: transparent;
 }
+
 .loginBody {
   box-sizing: border-box;
   width: auto;
@@ -31,8 +33,8 @@ input:-webkit-autofill:active {
   grid-template-rows: [top] auto [middle] auto [base] auto;
 }
 
-@import url("body/top.css");
+@import url("body/top.scss");
 
 @import url("body/middle.css");
 
-@import url("body/base.css");
+@import url("body/base.scss");

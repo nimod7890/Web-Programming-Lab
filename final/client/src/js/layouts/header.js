@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../css/layouts/header.scss";
-import Button from "./header/button";
+import "../../scss/layouts/Header.scss";
+import Button from "./header/Button";
 import MenuGroup from "./header/MenuGroup";
 import Menu from "./header/Menu";
 
 const Header = () => {
+  //set userName
   const [userName, setUserName] = useState("방문자");
-
-  const navigate = useNavigate();
-  function handleOnClick(classURL) {
-    navigate(classURL);
-  }
-  var jbRandom = Math.random();
-  var random_id = (Math.floor(jbRandom * 1000) % 658) + 10371;
-  if (random_id === 0) random_id = 1;
-  var project_src = "/project/" + random_id;
-  const [isActive, setActive] = useState(false);
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
   useEffect(() => {
     if (sessionStorage.getItem("login-name")) {
       setUserName(sessionStorage.getItem("login-name"));
     }
   }, []);
+
+  //move to each class page
+  const navigate = useNavigate();
+  function handleOnClick(classURL) {
+    navigate(classURL);
+  }
+  //for explore button(탐험하기)
+  var jbRandom = Math.random();
+  var random_id = (Math.floor(jbRandom * 1000) % 658) + 10371;
+  if (random_id === 0) random_id = 1;
+  var project_src = "/project/" + random_id;
+
+  //for class button(분반)
+  const [isActive, setActive] = useState(false);
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
 
   return (
     <header className="header">

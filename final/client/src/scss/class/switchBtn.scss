@@ -18,7 +18,7 @@
   width: 58px;
   height: 28px;
   background: #fff;
-  border: 2px solid #8bb381;
+  border: 2px solid #9f81b3;
   border-radius: 20px;
   transition: 0.2s;
 }
@@ -33,18 +33,18 @@
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  background: #8bb381;
+  background: #9d81b3;
   transition: 0.2s;
 }
 
 /* checking style */
 #Switch:checked + .SwitchLabel {
-  background: #6aa121;
-  border: 2px solid #6aa121;
+  background: #6321a1;
+  border: 2px solid #6521a1;
 }
 
 #Switch:checked + .SwitchLabel:hover {
-  background: #a1c935;
+  background: #6e35c9;
 }
 
 #Switch:checked + .SwitchLabel .SwitchBtn {

@@ -1,25 +1,28 @@
-import "../css/Class.scss";
+import "../scss/Class.scss";
 import { useParams } from "react-router-dom";
-import Grid from "./Grid/Grid";
+import Grid from "./Class/Grid";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-function shuffleArray(array) {
-  const newArray = JSON.parse(JSON.stringify(array));
-  newArray.sort(() => Math.random() - 0.5);
-  return newArray;
-}
+
 function Class() {
-  const classId = useParams().classId;
   const [projects, setprojects] = useState([]);
   const projectList = useRef(projects);
   const projectRandList = useRef(projects);
 
+  //handle to sort
   function handleChecked({ target }) {
     target.checked
       ? setprojects(projectList.current)
       : setprojects(projectRandList.current.sort(() => Math.random() - 0.5));
   }
 
+  function shuffleArray(array) {
+    const newArray = JSON.parse(JSON.stringify(array)); //deep copy
+    newArray.sort(() => Math.random() - 0.5); //random sort
+    return newArray;
+  }
+  //set project list in the class
+  const classId = useParams().classId;
   useEffect(() => {
     axios
       .get(`/api/class/${classId}`)

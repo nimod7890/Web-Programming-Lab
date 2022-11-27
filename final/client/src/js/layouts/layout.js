@@ -1,6 +1,6 @@
-import Footer from "./footer";
-import Header from "./header";
-import "../../css/layouts/layout.scss";
+import Footer from "./Footer";
+import Header from "./Header";
+import "../../scss/layouts/Layout.scss";
 import { Route, Routes, useLocation } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -11,8 +11,9 @@ import Class from "../Class";
 import Project from "../Project";
 
 const Layout = () => {
-  const [title, setTitle] = useState(false);
+  //set title based on current url
   const loc = useLocation().pathname;
+  const [title, setTitle] = useState(false);
   useEffect(() => {
     if (loc === "/main") {
       setTitle("");
@@ -23,6 +24,7 @@ const Layout = () => {
     } else if (loc.length > 6 && loc.slice(0, 6) === "/class") {
       setTitle(loc.slice(7));
     } else if (loc.length > 8 && loc.slice(0, 8) === "/project") {
+      //get project info
       axios
         .get(`/api/project/${loc.slice(9)}`)
         .then(function (response) {

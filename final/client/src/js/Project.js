@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../css/Project.scss";
+import "../scss/Project.scss";
 import axios from "axios";
 import YouTube from "react-youtube";
 import { useRef } from "react";
 
 function Project() {
+  /**show project detail page */
   const projectId = useParams().projectId;
-
   const project = useRef("");
-  const click = useRef(false);
+  const [click, setClick] = useState(false);
   const [like, setLike] = useState(0);
 
+  //get project info
   useEffect(() => {
     axios
       .get(`/api/project/${projectId}`)
@@ -36,19 +37,21 @@ function Project() {
           like_cnt: data.like_cnt
         };
         setLike(project.current.like_cnt);
+        setClick(false);
       })
       .catch(function (error) {
         console.log(error);
       });
   }, [projectId]);
 
+  //if 'like' button click
   async function handleOnclick() {
-    if (click.current) {
+    if (click) {
       setLike(like - 1);
-      click.current = false;
+      setClick(false);
     } else {
       setLike(like + 1);
-      click.current = true;
+      setClick(true);
     }
   }
 
@@ -65,7 +68,7 @@ function Project() {
             onClick={() => {
               handleOnclick();
             }}
-            className={`${click.current ? "" : "NoneClick"}`}
+            className={`${click ? "" : "NoneClick"}`}
           >
             <div>
               <span className="material-symbols-outlined">favorite</span>

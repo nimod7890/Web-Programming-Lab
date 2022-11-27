@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("./db");
 
+//get project list by class name
 router.get("/class/:className", (req, res) => {
   const className = req.params.className;
   const sql = `SELECT team_name, team_member, team_number, hashtag_main, hashtag_custom_a, hashtag_custom_b, hashtag_custom_c,project_name,project_thumbnail_url,project_id  FROM project WHERE class_name = ?`;
@@ -11,6 +12,7 @@ router.get("/class/:className", (req, res) => {
   });
 });
 
+//get project list by hashtag name
 router.get("/tag/:tagId", (req, res) => {
   const tagId = req.params.tagId;
   const sql =
@@ -21,6 +23,7 @@ router.get("/tag/:tagId", (req, res) => {
   });
 });
 
+//get project info by project id
 router.get("/project/:projectId", (req, res) => {
   const projectId = req.params.projectId;
   const sql = "SELECT * FROM project WHERE project_id = ?";

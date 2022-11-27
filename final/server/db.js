@@ -7,6 +7,8 @@ const DB_INFO = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME
 };
+
+//connect database
 const db = mysql.createConnection(DB_INFO);
 db.connect();
 
